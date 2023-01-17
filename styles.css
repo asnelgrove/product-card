@@ -8,22 +8,24 @@
 :root {
     --green: hsl(158, 36%, 37%);
     --cream: hsl(30, 38%, 92%);
+    --grey-blue: hsl(228, 12%, 48%);
+    --dark-blue: hsl(212, 21%, 14%);
 }
 
 .background {
     background-color: var(--cream);
     width: 100%;
-    height: 100vh;
+    height: auto;
     padding: 1.25rem 1rem;
 }
 
 .card {
     background-color: #fff;
     width: fit-content;
-    height: 550px;
+    height: auto;
     border: none;
     border-radius: 5px;
-    
+    margin-block: 3vh;
 }
 
 .bg-image {
@@ -40,9 +42,39 @@
     padding: 1.25rem;
 }
 
+.text > * {
+    margin-bottom: 0.5rem;
+}
+
+.small-caps, .grey-text, .strike {
+    color: var(--grey-blue);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.small-caps {
+    text-transform: uppercase;
+}
+
 h1 {
     font-family: 'Fraunces', serif;
+    color: var(--green);
 
+}
+
+h1.title {
+    color: var(--dark-blue);
+}
+
+.strike {
+    font-weight: 500;
+    font-size: small;
+    text-decoration: line-through;
+}
+
+span.strike {
+    padding-left: 8px;
+    vertical-align: middle;
 }
 
 button {
@@ -54,4 +86,38 @@ button {
     border-radius: 4px;
     font-size: 1rem;
     font-weight: 700;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: var(--dark-blue);
+}
+
+span img {
+    padding-right: 12px;
+}
+
+@media screen and (min-width: 600px) {
+
+    .card {
+        display: flex;
+        width: 28.75rem;
+        height: 28rem;
+        margin-inline: auto;
+        margin-block: 5vh;
+    }
+    .bg-image {
+        background-image: url('images/image-product-desktop.jpg');
+        background-size: cover;
+        background-position: center;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 5px;
+        width: 50%;
+        flex-basis: 1;
+        height: 100%;
+    }
+    .text {
+        flex-basis: 1;
+        width: 50%;
+    }
 }
